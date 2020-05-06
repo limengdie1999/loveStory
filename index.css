@@ -1,0 +1,101 @@
+html,
+body {
+	height: 100%;
+	/* overflow: hidden; */
+}
+.main {
+	height: calc(100% - 200px);
+	background-color: #5af580;
+	background-color: #333;
+	padding-top: 200px;
+}
+.love {
+	font: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: center;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+	color: #ffffff;
+	font-size: 120px;
+	font-weight: 100;
+}
+.capsule {
+	text-align: center;
+	color: #ffffff;
+	margin: 20px;
+}
+.capsule div {
+	line-height: 48px;
+	padding: 0px 60px;
+	font-family: "微软雅黑";
+	font-weight: 300;
+	font-size: 18px;
+	color: #333333;
+	display: inline-block;
+}
+.capsule .left {
+	background-color: #eee0d5;
+	border-radius: 50px 0 0 50px;
+	margin-left: 4px;
+}
+.capsule .right {
+	background-color: #b0f2d3;
+	border-radius: 0 50px 50px 0;
+	margin-left: -4px;
+}
+.timing {
+	width: 800px;
+	color: #ffffff;
+	text-align: right;
+	margin: 0 auto;
+	margin-top: 200px;
+	font-family: "微软雅黑";
+	font-size: 32px;
+	font-weight: 300;
+}
+.timing p:first-child {
+	text-align: left;
+	font-size: 32px;
+}
+.timing span {
+	font-size: 64px;
+}
+#Letter {
+	/* height: 100%; */
+	padding-top: 64px;
+}
+#Letter h2 {
+	text-align: center;
+	line-height: 64px;
+	margin-bottom: 24px;
+}
+.letter {
+	width: 464px;
+	height: 750px;
+	background-color: #b0f2d3;
+	margin: 0 auto;
+}
+#Letter .bottom {
+	/* width: 1200px; */
+	margin: 0 auto;
+	margin-top: 64px;
+	color: #fff;
+	font-size: 64px;
+	background-image: url(../src/17.jpg);
+	background-position: center 890px;
+	background-repeat: repeat;
+	text-align: center;
+	line-height: 84px;
+	padding: 200px;
+	/* margin-bottom: 24px; */
+}
+
+#Story {
+	height: 100%;
+	/* padding-top: 64px; */
+}
+#Story h2 {
+	text-align: center;
+	line-height: 64px;
+	margin-bottom: 24px;
+}
