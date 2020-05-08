@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>李梦蝶.我爱你</title>
+		<link rel="stylesheet" href="css/global_m.css" />
+		<link rel="stylesheet" href="css/index_m.css" />
+		<script src="js/time.js"></script>
+		<script src="js/typed.js@2.0.9.js"></script>
+	</head>
+	<body>
+		<header class="s_down">
+			<div class="logo">
+				<a href="#">LOVE</a>
+			</div>
+			<ul class="menu">
+				<li class="item"><a href="#Home">Home</a></li>
+				<li class="item"><a href="#Letter">Letter</a></li>
+				<li class="item"><a href="#Story">Story</a></li>
+				<li class="item"><a href="#Photo">Photo</a></li>
+			</ul>
+		</header>
+		<div id="Home">
+			<div class="love">I LOVE YOU</div>
+			<div class="capsule">
+				<div class="left">某某某</div>
+				<div class="right">栾美华</div>
+			</div>
+			<div class="timing">
+				<p>You've been in love</p>
+				<p>
+					<span class="days" id="days">xx</span> Days
+					<span class="hours" id="hours">xx</span> Hours<br />
+					<span class="minutes" id="minutes">xx</span> Minutes
+					<span class="seconds" id="seconds">xx</span> Seconds
+				</p>
+			</div>
+		</div>
+		<div id="Letter">
+			<h2>Letter to you</h2>
+			<div class="letter">
+				<span id="Letter-box"></span>
+			</div>
+		</div>
+		<div id="Story">
+			<h2>The Story Of Us</h2>
+		</div>
+		<div id="Photo">
+			<h2>Our photo album</h2>
+		</div>
+		<footer>Copyright © 2014 - 2020 真爱至上 All Rights Reserved</footer>
+	</body>
+	<script>
+		var days = document.getElementById("days");
+		var hours = document.getElementById("hours");
+		var minutes = document.getElementById("minutes");
+		var seconds = document.getElementById("seconds");
+		setInterval(function () {
+			var date = new Date();
+			var timeInterval = date.valueOf() - inTime;
+			var timeInterval = new Date(timeInterval);
+			var Days = Math.floor(timeInterval.getTime() / 86400000);
+			var Hours = timeInterval.getUTCHours();
+			var Minutes = timeInterval.getUTCMinutes();
+			var Seconds = timeInterval.getUTCSeconds();
+			days.innerHTML = Days;
+			hours.innerHTML = Hours;
+			minutes.innerHTML = Minutes;
+			seconds.innerHTML = Seconds;
+		}, 1);
+	</script>
+	<script>
+		var options = {
+			strings: [
+				"",
+				"This is the Letter-box",
+				"<i>First</i>...^1000",
+				"<i>First</i> sentence.",
+			],
+			typeSpeed: 100,
+			/**
+			 * @property {number} startDelay 键入之前的时间以毫秒开始
+			 */
+			startDelay: 0,
+			/**
+			 * @property {number} backSpeed 退格速度，以毫秒为单位
+			 */
+			backSpeed: 100,
+			/**
+			 * @property {boolean} smartBackspace 是否只退格与前一个字符串不匹配的内容
+			 */
+			smartBackspace: true,
+			/**
+			 * @property {boolean} shuffle 是否洗牌
+			 */
+			shuffle: false,
+			/**
+			 * @property {number} backDelay 退回之前的时间，以毫秒为单位
+			 */
+			backDelay: 700,
+			onComplete: (self) => {
+				console.log("所有打字都已完成调用的回调函数", self);
+			},
+			/**
+			 * 在键入每个字符串之前调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			preStringTyped: (arrayPos, self) => {
+				console.log(
+					"在键入每个字符串之前调用的回调函数",
+					arrayPos,
+					self
+				);
+			},
+			/**
+			 * 输入每个字符串后调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			onStringTyped: (arrayPos, self) => {
+				console.log("输入每个字符串后调用的回调函数", arrayPos, self);
+			},
+			/**
+			 * 在循环期间，在键入最后一个字符串之后调用的回调函数
+			 * @param {Typed} self
+			 */
+			onLastStringBackspaced: (self) => {
+				console.log(
+					"在循环期间，在键入最后一个字符串之后调用的回调函数",
+					self
+				);
+			},
+			/**
+			 * 打字已经停止调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			onTypingPaused: (arrayPos, self) => {
+				console.log("打字已经停止调用的回调函数", arrayPos, self);
+			},
+			/**
+			 * 停止后开始键入调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			onTypingResumed: (arrayPos, self) => {
+				console.log("停止后开始键入调用的回调函数", arrayPos, self);
+			},
+			/**
+			 * 重置后调用的回调函数
+			 * @param {Typed} self
+			 */
+			onReset: (self) => {
+				console.log("重置后调用的回调函数", self);
+			},
+			/**
+			 * 停止后调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			onStop: (arrayPos, self) => {
+				console.log("停止后调用的回调函数", arrayPos, self);
+			},
+			/**
+			 * 开始后调用的回调函数
+			 * @param {number} arrayPos
+			 * @param {Typed} self
+			 */
+			onStart: (arrayPos, self) => {
+				console.log("开始后调用的回调函数", arrayPos, self);
+			},
+			/**
+			 * 销毁后调用的回调函数
+			 * @param {Typed} self
+			 */
+			onDestroy: (self) => {
+				console.log("销毁后调用的回调函数", self);
+			},
+		};
+
+		var typed = new Typed("#Letter-box", options);
+	</script>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>切换屏幕</title>
+		<style>
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+			}
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			.box {
+				width: 0;
+				height: 0;
+			}
+			#box1 {
+				background-color: #333333;
+			}
+			#box2 {
+				background-color: lightblue;
+			}
+			#box3 {
+				background-color: lightcoral;
+			}
+			#box4 {
+				background-color: lightgreen;
+			}
+			#box5 {
+				background-color: lightyellow;
+			}
+			#box6 {
+				background-color: lightsalmon;
+			}
+			.right {
+			}
+			.showbox {
+				width: 100%;
+				height: 100%;
+				transition: width 5s;
+			}
+			.showbox:hover {
+				width: 0%;
+				height: 100%;
+				transition: 5s;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box1" class="box"></div>
+		<div id="box2" class="box right"></div>
+		<div id="box3" class="box"></div>
+		<div id="box4" class="box"></div>
+		<div id="box5" class="box"></div>
+		<div id="box6" class="box"></div>
+	</body>
+	<script>
+		var boxs = document.getElementsByClassName("box");
+		boxs[1].className = "box right showbox";
+	</script>
+</html>

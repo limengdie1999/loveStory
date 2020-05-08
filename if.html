@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			.popup-window {
+				width: 240px;
+				height: 120px;
+				padding: 0px 0 32px 0;
+				margin: 0 auto;
+				margin-top: 200px;
+				position: relative;
+				background-color: #666666;
+			}
+			.popup-window .table {
+				width: 220px;
+				height: 32px;
+				padding-left: 20px;
+				line-height: 32px;
+				background-color: #333333;
+				color: #ffffff;
+			}
+			.popup-window .content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				padding: 20px;
+				top: 32px;
+				bottom: 32px;
+				/* background-color: #333333; */
+			}
+			.popup-window .button {
+				float: left;
+				width: 120px;
+				height: 32px;
+				position: absolute;
+				bottom: 0px;
+				line-height: 32px;
+				text-align: center;
+				color: #ffffff;
+				background-color: #333333;
+			}
+			.popup-window .red {
+				right: 0;
+				background-color: lightcoral;
+			}
+			.popup-window .green {
+				left: 0;
+				background-color: lightgreen;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="popup-window" id="Popup">
+			<div class="table">在一起吗？</div>
+			<div class="content">你快想想，要不要在一起？</div>
+			<div class="button green" onclick="agree()">确定</div>
+			<div class="button red" onclick="refuse()">
+				取消( <psan id="popup-timing">5</psan> s)
+			</div>
+		</div>
+	</body>
+	<script>
+		function agree(params) {
+			var id = "Popup";
+			document.getElementById(id).style = "display:none";
+			clearInterval(Timing);
+			alert("agree");
+		}
+		function refuse(params) {
+			var id = "Popup";
+			document.getElementById(id).style = "display:none";
+			clearInterval(Timing);
+			alert("refuse");
+		}
+		function timing() {
+			var popupTiming = document.getElementById("popup-timing");
+			if (popupTiming.innerHTML != "0") {
+				console.log(popupTiming.innerHTML - 1);
+				popupTiming.innerHTML = popupTiming.innerHTML - 1;
+			} else {
+				refuse();
+			}
+		}
+		var Timing = setInterval(timing, 1000);
+	</script>
+</html>

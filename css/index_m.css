@@ -1,0 +1,99 @@
+#Home {
+	height: calc(100vh - 4rem);
+	top: 0;
+	padding-top: 24vh;
+	background-color: #333333;
+}
+.love {
+	font: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	text-align: center;
+	font-family: "微软雅黑", Helvetica, Arial, sans-serif;
+	color: #ffffff;
+	font-size: 64px;
+	font-weight: 100;
+}
+.capsule {
+	text-align: center;
+	color: #ffffff;
+	margin: 20px;
+}
+.capsule div {
+	line-height: 48px;
+	padding: 0px 60px;
+	font-family: "微软雅黑";
+	font-weight: 300;
+	font-size: 18px;
+	color: #333333;
+	display: inline-block;
+}
+.capsule .left {
+	background-color: #eee0d5;
+	border-radius: 50px 0 0 50px;
+	margin-left: 4px;
+}
+.capsule .right {
+	background-color: #b0f2d3;
+	border-radius: 0 50px 50px 0;
+	margin-left: -4px;
+}
+.timing {
+	color: #ffffff;
+	text-align: right;
+	margin: 0 auto;
+	margin-top: 18vh;
+	font-family: "微软雅黑";
+	font-size: 24px;
+	font-weight: 300;
+	padding: 20px;
+}
+.timing p:first-child {
+	text-align: left;
+	font-size: 24px;
+}
+.timing span {
+	font-size: 64px;
+}
+#Letter {
+	z-index: 1;
+	height: 100vh;
+	padding-top: 4rem;
+	background-color: #ffffff;
+}
+#Letter h2 {
+	line-height: 64px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #333333;
+}
+.letter {
+	padding: 20px;
+}
+#Letter-box {
+	color: black;
+}
+#Story {
+	z-index: 1;
+	height: 100vh;
+	padding-top: 4rem;
+	background-color: #ffffff;
+}
+#Story h2 {
+	line-height: 64px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #333333;
+}
+#Photo {
+	z-index: 1;
+	height: 100vh;
+	padding-top: 4rem;
+	background-color: #ffffff;
+}
+#Photo h2 {
+	line-height: 64px;
+	text-align: center;
+	color: #ffffff;
+	background-color: #333333;
+}
