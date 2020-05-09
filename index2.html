@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>李梦蝶.我爱你</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
+		<script src="js/time.js"></script>
+	</head>
+	<body>
+		<header class="s_down">
+			<div class="logo">
+				<a href="#">LOVE</a>
+			</div>
+			<ul class="menu">
+				<li class="item"><a href="#Home">Home</a></li>
+				<li class="item"><a href="#Letter">Letter</a></li>
+				<li class="item"><a href="#Story">Story</a></li>
+				<li class="item"><a href="#Photo">Photo</a></li>
+			</ul>
+		</header>
+		<div class="main" id="Home">
+			<div class="love">I LOVE YOU</div>
+			<div class="capsule">
+				<div class="left">李梦蝶</div>
+				<div class="right">栾美华</div>
+			</div>
+			<div class="timing">
+				<p>You've been in love</p>
+				<p>
+					<span class="days" id="days">xx</span> Days
+					<span class="hours" id="hours">xx</span> Hours
+					<span class="minutes" id="minutes">xx</span> Minutes
+					<span class="seconds" id="seconds">xx</span> Seconds.
+				</p>
+			</div>
+		</div>
+		<div id="Letter">
+			<h2>Letter to you</h2>
+			<div class="letter"></div>
+			<!-- <h2 class="bottom">Letter to you</h2> -->
+			<a href="" class="button">MORE LETTERS</a>
+		</div>
+		<div id="Story">
+			<h2>The Story Of Us</h2>
+			<div class="Storys"></div>
+			<a href="" class="button">MORE STORYS</a>
+		</div>
+		<div id="Photo">
+			<h2>Our photo album</h2>
+			<div class="Photos">
+				<ul>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<!-- <div class="button center"></div> -->
+			<a href="" class="button">MORE PHOTOS</a>
+		</div>
+
+		<footer>Copyright © 2014 - 2020 真爱至上 All Rights Reserved</footer>
+	</body>
+	<script>
+		var days = document.getElementById("days");
+		var hours = document.getElementById("hours");
+		var minutes = document.getElementById("minutes");
+		var seconds = document.getElementById("seconds");
+		setInterval(function () {
+			var date = new Date();
+			var timeInterval = date.valueOf() - inTime;
+			var timeInterval = new Date(timeInterval);
+			var Days = Math.floor(timeInterval.getTime() / 86400000);
+			var Hours = timeInterval.getUTCHours();
+			var Minutes = timeInterval.getUTCMinutes();
+			var Seconds = timeInterval.getUTCSeconds();
+			days.innerHTML = Days;
+			hours.innerHTML = Hours;
+			minutes.innerHTML = Minutes;
+			seconds.innerHTML = Seconds;
+		}, 1);
+	</script>
+	<script>
+		if (
+			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+				navigator.userAgent
+			)
+		) {
+			window.location = "m.html"; //可以换成http地址
+		}
+	</script>
+</html>
