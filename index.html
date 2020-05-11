@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>如果不喜欢就不要招惹</title>
-		<link rel="stylesheet" href="css/global_m.css" />
-		<link rel="stylesheet" href="css/indexm.css" />
+		<title>李梦蝶.我爱你</title>
+		<link rel="stylesheet" href="css/index.css" />
+		<link rel="stylesheet" href="css/global.css" />
+		<link rel="stylesheet" href="css/fonts.css" />
 		<script src="js/time.js"></script>
-		<script src="js/typed.js@2.0.9.js"></script>
 	</head>
 	<body>
 		<header class="s_down">
@@ -21,24 +21,50 @@
 				<li class="item"><a href="#Photo">Photo</a></li>
 			</ul>
 		</header>
-		<div id="Letter">
-			<h2>Letter to you</h2>
-			<div class="letter">
-				<span id="Letter-box"></span>
+		<div class="main" id="Home">
+			<div class="love">I LOVE YOU</div>
+			<div class="capsule">
+				<div class="left">李梦蝶</div>
+				<div class="right">栾美华</div>
 			</div>
-		</div>
-		<div id="Home">
-			<div class="love">If you don't like me, don't provoke me</div>
 			<div class="timing">
-				<p>From left to now for</p>
+				<p>You've been in love</p>
 				<p>
 					<span class="days" id="days">xx</span> Days
-					<span class="hours" id="hours">xx</span> Hours<br />
+					<span class="hours" id="hours">xx</span> Hours
 					<span class="minutes" id="minutes">xx</span> Minutes
-					<span class="seconds" id="seconds">xx</span> Seconds
+					<span class="seconds" id="seconds">xx</span> Seconds.
 				</p>
 			</div>
 		</div>
+		<div id="Letter">
+			<h2>Letter to you</h2>
+			<div class="letter"></div>
+			<!-- <h2 class="bottom">Letter to you</h2> -->
+			<a href="" class="button">MORE LETTERS</a>
+		</div>
+		<div id="Story">
+			<h2>The Story Of Us</h2>
+			<div class="Storys"></div>
+			<a href="" class="button">MORE STORYS</a>
+		</div>
+		<div id="Photo">
+			<h2>Our photo album</h2>
+			<div class="Photos">
+				<ul>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+					<li><img src="src/17.jpg" alt="" /></li>
+				</ul>
+			</div>
+			<!-- <div class="button center"></div> -->
+			<a href="" class="button">MORE PHOTOS</a>
+		</div>
+
+		<footer>Copyright © 2014 - 2020 真爱至上 All Rights Reserved</footer>
 	</body>
 	<script>
 		var days = document.getElementById("days");
@@ -60,117 +86,12 @@
 		}, 1);
 	</script>
 	<script>
-		var options = {
-			strings: [
-				"",
-				`<span>当你看到这个的时候，我已经走了。我不知道我做的对不对，原本的打算20号给你个惊喜，但是想了想^1000你好像不太需要。</span> <br>
-<span>我曾经想等到你走出来，但是看起来我好想等不到了，^1000可能是我太傻了吧。^1000轻易地喜欢上了你，以后不会这样了。</span><br>
-<span>^1000愿你安好，各自幸福吧。</span>`,
-				`<span>你一定不会找我吧，甚至都不会看到这个。</span>`,
-			],
-			typeSpeed: 100,
-			/**
-			 * @property {number} startDelay 键入之前的时间以毫秒开始
-			 */
-			startDelay: 0,
-			/**
-			 * @property {number} backSpeed 退格速度，以毫秒为单位
-			 */
-			backSpeed: 100,
-			/**
-			 * @property {boolean} smartBackspace 是否只退格与前一个字符串不匹配的内容
-			 */
-			smartBackspace: true,
-			/**
-			 * @property {boolean} shuffle 是否洗牌
-			 */
-			shuffle: false,
-			/**
-			 * @property {number} backDelay 退回之前的时间，以毫秒为单位
-			 */
-			backDelay: 700,
-			onComplete: (self) => {
-				console.log("所有打字都已完成调用的回调函数", self);
-			},
-			/**
-			 * 在键入每个字符串之前调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			preStringTyped: (arrayPos, self) => {
-				console.log(
-					"在键入每个字符串之前调用的回调函数",
-					arrayPos,
-					self
-				);
-			},
-			/**
-			 * 输入每个字符串后调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			onStringTyped: (arrayPos, self) => {
-				console.log("输入每个字符串后调用的回调函数", arrayPos, self);
-			},
-			/**
-			 * 在循环期间，在键入最后一个字符串之后调用的回调函数
-			 * @param {Typed} self
-			 */
-			onLastStringBackspaced: (self) => {
-				console.log(
-					"在循环期间，在键入最后一个字符串之后调用的回调函数",
-					self
-				);
-			},
-			/**
-			 * 打字已经停止调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			onTypingPaused: (arrayPos, self) => {
-				console.log("打字已经停止调用的回调函数", arrayPos, self);
-			},
-			/**
-			 * 停止后开始键入调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			onTypingResumed: (arrayPos, self) => {
-				console.log("停止后开始键入调用的回调函数", arrayPos, self);
-			},
-			/**
-			 * 重置后调用的回调函数
-			 * @param {Typed} self
-			 */
-			onReset: (self) => {
-				console.log("重置后调用的回调函数", self);
-			},
-			/**
-			 * 停止后调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			onStop: (arrayPos, self) => {
-				console.log("停止后调用的回调函数", arrayPos, self);
-			},
-			/**
-			 * 开始后调用的回调函数
-			 * @param {number} arrayPos
-			 * @param {Typed} self
-			 */
-			onStart: (arrayPos, self) => {
-				console.log("开始后调用的回调函数", arrayPos, self);
-			},
-			/**
-			 * 销毁后调用的回调函数
-			 * @param {Typed} self
-			 */
-			onDestroy: (self) => {
-				console.log("销毁后调用的回调函数", self);
-			},
-		};
-		console.log("有买域名的联系QQ：1952514395");
-		var typed = new Typed("#Letter-box", options);
-		
+		if (
+			/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+				navigator.userAgent
+			)
+		) {
+			window.location = "m.html"; //可以换成http地址
+		}
 	</script>
 </html>
